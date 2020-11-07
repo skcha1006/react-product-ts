@@ -20,7 +20,10 @@ function FilterableProductTable() {
     <div>
       <SearchBar keyword={keyword} setKeyword={setKeyword}
                  stockChecked={stockChecked} setStockChecked={setStockChecked}></SearchBar>
-      <ProductTable products={products.filter(item => item.name.indexOf(keyword) >= 0).filter(item => stockChecked ? item.stocked : true)}></ProductTable>
+      <ProductTable products={products
+        .filter(item => item.name.indexOf(keyword) >= 0)
+        .filter(item => stockChecked ? item.stocked : true)}>
+      </ProductTable>
     </div>
   )
 }
