@@ -1,0 +1,199 @@
+강의 블로그
+https://eastflag.co.kr/react/
+
+ Git 주소 
+  강의블로그 > 리액트 > 첫화면 하단 Git
+
+ 리액트 및 자바스크립트 질문
+  카톡 오픈채팅방: 이스트플랙
+  개인 질문: eastflag
+
+
+리액트 공식사이트
+https://reactjs.org/docs/hooks-intro.html
+
+데모사이트
+http://scoreboard.eastflag.co.kr/scoreboard
+
+create-react-app 공식사이트
+https://create-react-app.dev/
+ 생성명령어 : cmd > C:\skcha > npx create-react-app scoreboard
+ 실행  cd C:\skcha\scoreboard
+        npm start
+
+
+크롬에서 react devtools 검색 > 광고 추가됨 React Developer Tools 1282 
+   react devtools 크롬에 추가 컴포넌트 디버깅 관련 툴
+
+WebStorm  help > 레지스터
+ 라이선스 서버 부분에
+   http://edu.eastflag.co.kr:8750
+===================================
+> 강의 순서
+  1. script tag 페이지 방식
+     - 12가지 메인 컨셉
+  2. create-react-app CLI 방식
+     - 이해를 위해 최신 프런트앤드 기술에서 모듈화&webpack 설명 진행
+  3. react hooks
+     - 리액트 필수 기술 
+  4. react redux
+     - 상태관리 
+  5. 웹사이트 예 with typescript
+     - 타입스크립트
+
+  # Bootstrap + react-router 사이트
+     - 개인 실습 > 웹사이트 개발
+        react native - 모바일 개발, react electron - 데스크탑 어플리케이션 개발
+
+====================================
+
+1. 개발 환경설정
+  1) 강의블로그 > 최신 프런트앤드 기술 > 환경설정
+     - nodejs설치 및 git 설치 필요
+    
+     - choco 설치 안되어 있으면 PowerShell 관리자 권한으로 실행
+       Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).Downl
+       > 오류발생
+     
+     - nodejs설치 직접설치 진행 ( https://nodejs.org/en/ )
+       > 12.19.0 LTS 설치
+     - git 설치 직접설치 진행 ( https://git-scm.com/ )
+
+   2) 강의블로그 > 최신 프런트앤드 기술 > 개발툴 – webstorm 설정 (유료)
+     - https://www.jetbrains.com/   > Tools
+       > IntelliJ IDEA - 자바 개발 툴 
+       > PyCharm - 파이썬 개발 툴
+       > WebStorm - 리액트 개발 툴  
+         - 설치 중 Options에서 64bit launcher 선택, Add " Open Folder as Project" 선택, Add launchers dir to the PATH 선택 하여 설치진행
+
+   # Component 개발시 중요한 부분
+      메인 컨셉(4번, 5번)에서 Components , Props , State
+      Component : 독립적이고 재사용 가능한 조각
+      Props : Component간의 데이터 공유시 사용 (데이터는 위에서 아래로, 임의 변경 시 상위와 동기화 안됨)
+      State : Component 동적 데이터
+               이벤트 우측에는 함수 선언문이 놓여야 한다.
+               시간에 따라 변하는 데이터는 state에 보관한다.
+               state 규칙1 – state를 변경하는 방법은 setState 밖에 없다
+               state 규칙2 – setState에 state를 수정하면 merge (오버라이팅) 된다.
+               state 규칙3 – setState는 비동기로 처리되기 때문에 이전 상태에 따라 현재 상태를 업데이트할 시에는 이전 상태를 받아서 처리해야 한다.
+
+2. script tag 개발
+   1) index.html
+      웹개발에 필요한 필수 라이브러리
+       리액트 코어 라이브러리
+        - https://unpkg.com/react@16/umd/react.development.js
+       리액트 도움 라이브러리
+        - https://unpkg.com/react-dom@16/umd/react-dom.development.js
+
+   2) 개발툴 – webstorm 설정
+      파일 > setting > Languages > javaScript > Libraries 
+        - 다운로드 react, react-dom
+       파일 > setting > Languages > javaScript
+        - ECMAScript 6+ > React JSX로 변경  
+    type 
+      const : 한번 설정한 변수 값을 변경을 할 수 없음
+      let :  
+
+   리액트 함수에서 ctl+ Q 함수 설명을 볼 수 있음
+   함수 자동 완성 시 Tab키를 누를 경우 뒤에 잘못된 함수명들이 사라짐, Enter인 경우 기존 잔여 문자가 남아있음
+   주석 : ctl + /
+   함수 따라가기 : ctl + B
+
+3. Component
+  1) function component
+     - 제약조건
+        function 컴포넌트를 만들때 첫글자는 대문자로 만든다
+        리액트 엘리먼트를 리턴해야 된다
+
+# 클래스 설계원칙, 패키지 설계원칙
+
+
+
+** 1주차 중요부분
+ES6
+const 
+let 
+... : rest, spread
+arrow : 익명함수를 대체  
+객체 해체 할당
+생성자함수
+
+
+
+
+===================================================
+1. 최신 프런트엔드 기술 > 모듈화&webpack > webpack plugin and loader
+
+webpack 사이트
+ https://webpack.js.org/
+
+
+scoreboard
+ 1) 빌드하기
+   툴 하단 터미널에서 
+   npm run build 
+   툴 프로젝트의 scoreboard를 펼치기를 닫았다가 열면 build 경로가 생성되고 빌드결과가 들어가있음 해당부분을 server에 올리면 됨
+   npm install -g serve
+   serve -s build
+
+
+webpack 패키지 버전
+  "dependencies": {
+    "lodash": "^4.17.20",
+  },
+  "devDependencies": {
+    "webpack": "^4.30.0",
+    "webpack-dev-server": "^3.3.1",
+    "html-webpack-plugin": "^4.5.0",
+    "webpack-cli": "^3.3.0"
+  }
+
+터미널 중지
+ ctrl + C
+
+
+2. 최신 프런트엔드 기술 > 모듈화&webpack > COMMONJS 와 ES6애서의 모듈화
+
+
+
+3. git
+
++ 저장소 만들기
+
+git init
+
++ 저장소 상태 확인
+
+git status
+
++ staging 영역에 올리기
+
+git add index.html
+
++ 저장하기
+
+git commit index.html -m “first commit”
+
++ 원격 저장소 만들기
+
+github.com에 가입하고 빈 저장소를 만든다.
+
++ 로컬 저장소를 원격 저장소와 연결하기
+
+git remote -v
+
+git remote add origin https://github.com/skcha1006/webpack-demo.git
+
++ 로컬 저장소를 원격에 올리기
+
+git push origin master
+
+
+
+File > 셋팅 > 플러그인 
+  icon
+  glance
+
+
+
+
